@@ -1,0 +1,31 @@
+--Run Qt Creator from Terminal
+$source /opt/FP4/2.2.2/environment-setup-armv7at2hf-neon-fslc-linux-gnueabi
+$ ./Qt5.7.1/Tools/QtCreator/bin/qtcreator
+
+--How to Build the project to FP4kit
+1) In Qt creator Click on Projects
+2) Click on FP4 Build & run
+3) then Click on welcome then Open project ypu want to send to kit
+4)clean,run qmake, build
+5)then open terminal at exe path and type command to send exe to device
+$ scp *Name of exe* *devicename*@*Device ip*:*/home/root*(host path)
+6)tera  term settings
+-check ethernet cable connection
+-connect to device ip by ssh
+-check by pinging connection established or not
+7)open tera term vt
+8)check exe present by $ls
+9)if any other project is running kill it $killall *name of running project*
+10)for ui related prject to display 
+$ export DISPLAY=:0
+11)run exe by
+$ ./*exe name*
+
+#-------------------------------------------------------------------------------------------------
+If you want to run exe at the start up of device
+--open winscp connect to device
+path=  /etc/init.d/runtime_init.sh
+open file and path of exe in device
+and reboot.
+
+#-------------------------------------------------------------------------------------------------
