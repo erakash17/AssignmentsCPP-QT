@@ -9,3 +9,5 @@ In this program you can find below Examples,
 6) Client-server communication using tcp .
 7) single server multiple client commucation using tcp.
 8) Finding the MAC and IP Address of system.
+9) Basics commands are for connection of system to device .
+10) Also how to run the Application from Device.
