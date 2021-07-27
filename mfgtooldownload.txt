@@ -1,0 +1,39 @@
+-Usb to serial 
+1) check com port from device manager
+2) baud rate 115200
+3) stop bit 1bit
+4) parity 8bit
+
+
+-first 10byte of os are bootrom (That only we erase by commands)
+##------------------------------Download mfg tool------------------------------------------------##
+/* Pull up the device by giving power supply connect the serial and check port 
+* open tera term and connect with serial com port 
+* if logs not displayed please check the jp30 or short it to see logs
+* enter any key before timeout
+*/
+1) Check Device To switch ether solo ul or dual
+- mmc dev 1 1 (solo ul)
+- mmc dev 3 1 (for dual)
+2) then to erase
+- mmc erase 0 10
+3) reboot Device
+- reboot
+4) connect usb cable open mfg tool for required device from the path
+path--\\vssserver\Linux_Runtime_FW\NextGen-BTP\FP4_2-wire_Hardware_Change_MFGTool\
+5) Run the aplication check whether the device in HID mode or not
+6) If it is in HID mode start downloading mfg tool
+7) After the messsage "Update Complete" stop and exit the process
+8) hard reboot divice
+9) now to read dtb file change the dtb file name according to mfgtool
+- setenv base_board_name *Name of dtb without Extension*
+-saveenv
+-boot
+10) if kernel logs not comming
+-setenv console ttymxc0
+-saveenv
+-boot
+11) Or to stop kernel logs
+-setenv console null
+-saveenv
+-boot
