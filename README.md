@@ -12,3 +12,4 @@ In this program you can find below Examples,
 9) Basics commands for connection of system to device .
 10) Also how to run the Application At the time of Device boot.
 11) Check out the process for downloading mfgTool in Device.
+12) IPC mechanism (Shared Memory).
